@@ -1,0 +1,12 @@
+{
+  "name": "Battle Quest",
+  "short_name": "BattleQuest",
+  "start_url": ".",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0d1a12",
+  "theme_color": "#1a3d2a",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

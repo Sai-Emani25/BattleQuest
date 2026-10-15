@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#1a3d2a" />
+  <title>Battle Quest</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-root">
+    <canvas id="scene"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div id="hearts" aria-label="Health"></div>
+        <div class="hud-meta">
+          <span id="shards">0</span>
+          <small>SHARDS</small>
+        </div>
+        <button id="btn-pause" type="button">II</button>
+      </div>
+      <div id="companion-banner"></div>
+      <div id="announcement"></div>
+      <div class="crosshair" id="crosshair"></div>
+      <div id="charge-bar"><div id="charge-fill"></div></div>
+      <div class="hud-bottom">
+        <div id="look-stick" class="touch-only">
+          <div class="stick-knob"></div>
+          <span>LOOK</span>
+        </div>
+        <div class="weapon-cluster">
+          <button id="btn-swap" type="button" class="role-chip">SWAP</button>
+          <div id="slash-pad" class="touch-only">
+            <span>SWIPE<br />SWORD</span>
+          </div>
+          <button id="btn-bow" type="button" class="touch-only">BOW</button>
+        </div>
+      </div>
+      <p id="hint" class="hint"></p>
+    </div>
+
+    <div id="screen-title" class="panel-screen">
+      <div class="stamp">FOREST OF ECHOES</div>
+      <h1>BATTLE<br />QUEST</h1>
+      <p class="tagline">An on-rails first-person adventure.<br />Sword and bow. You and your companion.</p>
+      <button id="btn-play" type="button" class="cta">Enter the woods</button>
+      <p class="fine">Best in landscape on a phone. Desktop: mouse look, click to slash, hold right-click to draw the bow.</p>
+    </div>
+
+    <div id="screen-role" class="panel-screen hidden">
+      <h2>Choose your hero</h2>
+      <p>Your companion takes the other weapon and fights beside you on the rail.</p>
+      <div class="role-grid">
+        <button type="button" data-role="sword" class="role-card">
+          <strong>Knight</strong>
+          <span>Swipe to slash. Close-range, heavy hits.</span>
+        </button>
+        <button type="button" data-role="bow" class="role-card">
+          <strong>Ranger</strong>
+          <span>Hold to draw, release to fire. Pick off fliers.</span>
+        </button>
+        <button type="button" data-role="dual" class="role-card">
+          <strong>Champion</strong>
+          <span>Swap between sword and bow mid-run.</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="panel-screen hidden dim">
+      <h2>Paused</h2>
+      <button id="btn-resume" type="button" class="cta">Resume</button>
+      <button id="btn-restart" type="button" class="ghost">Restart</button>
+    </div>
+
+    <div id="screen-end" class="panel-screen hidden">
+      <h2 id="end-title">Victory</h2>
+      <p id="end-copy"></p>
+      <button id="btn-again" type="button" class="cta">Play again</button>
+    </div>
+
+    <div id="rotate-hint" class="hidden">Turn your phone sideways for Battle Quest.</div>
+  </div>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
